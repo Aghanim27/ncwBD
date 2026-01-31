@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>For You 💘</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-hearts" aria-hidden="true"></div>
+
+  <main class="container">
+    <header class="card hero">
+      <p class="badge">Valentine’s Day + Your Birthday 🎂💌</p>
+      <h1 id="title">Hey <span id="name">My Favorite Person</span> 💖</h1>
+      <p class="type" id="typewriter"></p>
+
+      <div class="hero-actions">
+        <button class="btn primary" id="playBtn" type="button">Play Music ♪</button>
+        <button class="btn" id="scrollBtn" type="button">See Your Surprise ↓</button>
+      </div>
+
+      <!-- optional: replace with your own audio file -->
+      <audio id="bgMusic" preload="auto" loop src="/mp3/Tampines%20Starlight.mp3">
+        <source src="/mp3/Tampines%20Starlight.mp3" type="audio/mpeg" />
+      </audio>
+      <!-- <p class="tiny">Tip: Put a file named <b>music.mp3</b> in the same folder (optional).</p> -->
+    </header>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Countdown ⏳</h2>
+        <p class="muted">Until Feb 14 (Valentine’s Day)</p>
+        <div class="countdown" id="countdown">
+          <div class="time"><span id="d">--</span><small>Days</small></div>
+          <div class="time"><span id="h">--</span><small>Hours</small></div>
+          <div class="time"><span id="m">--</span><small>Mins</small></div>
+          <div class="time"><span id="s">--</span><small>Secs</small></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>Why you’re amazing ✨</h2>
+        <p class="muted">Press the button. I mean it.</p>
+        <div class="quote" id="reasonBox">Because you make everything feel warmer.</div>
+        <button class="btn primary" id="reasonBtn" type="button">Another reason 💝</button>
+      </article>
+    </section>
+
+    <section class="card" id="memories">
+      <h2>Little Memories 📸</h2>
+      <p class="muted">Replace the pictures with yours (instructions below).</p>
+
+      <div class="gallery">
+        <figure class="photo">
+          <img src="/img/533-5336065_freetoedit-cute-kawaii-cat-couple-love-hug-affection.png" alt="Memory 1" />
+          <figcaption>Us, but in my head 😌</figcaption>
+        </figure>
+        <figure class="photo">
+          <img src="/img/F814BB5B-FE27-4DFB-8F98-6C6B31DC60A0 2.jpg" alt="Memory 2" />
+          <figcaption>Your smile = my weakness</figcaption>
+        </figure>
+        <figure class="photo">
+          <img src="/img/FF431BC4-B833-47FA-9630-C092D51BAC8B 2.jpg" alt="Memory 3" />
+          <figcaption>Hmm...</figcaption>
+        </figure>
+      </div>
+
+      <!-- <details class="howto">
+        <summary>How to add your photos</summary>
+        <ol>
+          <li>Put your images in this folder, e.g. <b>photo1.jpg</b>, <b>photo2.jpg</b>, <b>photo3.jpg</b></li>
+          <li>Replace each <code>src="..."</code> above with your filenames.</li>
+          <li>Change the captions to real memories.</li>
+        </ol>
+      </details> -->
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>A tiny quiz (cute mode) 🧠</h2>
+        <p class="muted">Pick the right answer 😤</p>
+
+        <div class="quiz">
+          <p><b>Question:</b> What’s my favorite thing?</p>
+          <div class="choices">
+            <button class="btn" data-choice="wrong" type="button">Sleep</button>
+            <button class="btn" data-choice="wrong" type="button">Food</button>
+            <button class="btn primary" data-choice="right" type="button">You</button>
+          </div>
+          <p class="quiz-result" id="quizResult"></p>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>Secret message 🔒</h2>
+        <p class="muted">Only for you.</p>
+        <div class="lock">
+          <input id="codeInput" type="password" placeholder="Enter secret code (hint: something I always wanted from you)" />
+          <button class="btn primary" id="unlockBtn" type="button">Unlock 💘</button>
+        </div>
+        <div class="secret" id="secretBox" hidden>
+          <h3>Happy Birthday + Happy Valentine’s Day 🎂💝</h3>
+          <p>
+            I’m grateful for you. I like you more than I can say, and I want to be yours.
+            I hope today makes you feel loved — because you are.
+          </p>
+          <p class="tiny muted">P.S. You can change this message in <code>index.html</code>.</p>
+        </div>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <p>Made with 💗 by <span id="fromName">[your name]</span></p>
+      <p class="tiny muted">Open this on mobile for max cute effect.</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
