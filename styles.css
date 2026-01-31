@@ -260,3 +260,180 @@ h2{
   50%{ transform: translate3d(-18px, 12px, 0); }
   100%{ transform: translate3d(0,0,0); }
 }
+
+/* ===== FULL SITE LOCK OVERLAY ===== */
+.lockOverlay{
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 18px;
+
+  /* darker + pinker overlay */
+  background:
+    radial-gradient(1200px 800px at 30% 20%, rgba(255,79,163,.35), transparent 60%),
+    radial-gradient(1000px 700px at 70% 80%, rgba(255,139,210,.28), transparent 60%),
+    rgba(0,0,0,.75);
+
+  /* THIS is the magic */
+  backdrop-filter: blur(18px) saturate(120%);
+  -webkit-backdrop-filter: blur(18px) saturate(120%);
+}
+
+
+.lockCard{
+  width: min(520px, 92vw);
+  border-radius: 28px;
+  padding: 18px;
+  border: 1px solid rgba(255,255,255,.20);
+  background: rgba(255,255,255,.10);
+  box-shadow: 0 28px 90px rgba(0,0,0,.55);
+  position: relative;
+  overflow:hidden;
+}
+
+.lockCard::before{
+  content:"";
+  position:absolute;
+  inset:-40px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,79,163,.22), transparent 45%),
+    radial-gradient(circle at 80% 60%, rgba(255,139,210,.18), transparent 48%);
+  opacity:.8;
+  pointer-events:none;
+}
+
+.lockTop{ position: relative; text-align:center; padding: 6px 6px 2px; }
+.lockIcon{ font-size: 38px; filter: drop-shadow(0 10px 24px rgba(255,79,163,.18)); }
+.lockTitle{
+  margin: 8px 0 2px;
+  font-size: 26px;
+  letter-spacing: .2px;
+}
+.lockSubtitle{ margin: 0; color: rgba(255,255,255,.72); }
+
+.pinRow{
+  position: relative;
+  display:flex;
+  gap:10px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+  justify-content:center;
+}
+
+.pinInput{
+  width: 170px;
+  text-align:center;
+  font-size: 22px;
+  letter-spacing: 8px;
+  padding: 12px 14px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.22);
+  background: rgba(0,0,0,.25);
+  color: rgba(255,255,255,.92);
+  outline: none;
+}
+
+.pinRevealBox{
+  position: relative;
+  margin-top: 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,79,163,.25);
+  background: rgba(255,79,163,.08);
+  padding: 12px;
+}
+
+.pinReveal{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.pinLabel{ color: rgba(255,255,255,.78); font-size: 13px; }
+.pinValue{
+  font-weight: 900;
+  font-size: 22px;
+  letter-spacing: 6px;
+  padding: 8px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.22);
+  background: rgba(0,0,0,.22);
+}
+
+.lockBottom{
+  position: relative;
+  margin-top: 12px;
+  text-align:center;
+}
+
+.miniCountdown{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.75);
+}
+
+/* nice fade-out when unlocked */
+.lockOverlay.hide{
+  animation: fadeOut .45s ease forwards;
+}
+@keyframes fadeOut{
+  to{ opacity:0; visibility:hidden; }
+}
+
+/* ===== safer background blur when locked ===== */
+body.locked::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  z-index: 9998; /* behind lockOverlay (9999) */
+  background: rgba(0,0,0,.25);
+  backdrop-filter: blur(10px) brightness(.75) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) brightness(.75) saturate(120%);
+  pointer-events: none;
+}
+
+/* ===== Letter Card ===== */
+.letterCard{
+  position: relative;
+}
+
+.letter{
+  margin-top: 10px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.16);
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.letter p{
+  margin: 0 0 12px;
+}
+
+.letter p:last-child{
+  margin-bottom: 0;
+}
+
+.letterSign{
+  margin-top: 18px;
+  font-weight: 600;
+  text-align: right;
+}
+
+.letterSign span{
+  background: linear-gradient(90deg, #ff4fa3, #ff8bd2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

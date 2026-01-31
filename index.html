@@ -7,6 +7,39 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+    <!-- LOCK OVERLAY -->
+<div id="lockOverlay" class="lockOverlay" aria-hidden="false">
+  <div class="lockCard">
+    <div class="lockTop">
+      <div class="lockIcon">🔒</div>
+      <h1 class="lockTitle">A Gift For You</h1>
+      <p class="lockSubtitle">Enter the 4-digit PIN to open 💗</p>
+    </div>
+
+    <div class="pinRow">
+      <input id="pinInput" class="pinInput" inputmode="numeric" maxlength="4" placeholder="• • • •" />
+      <button id="unlockSiteBtn" class="btn primary" type="button">Unlock ✨</button>
+    </div>
+
+    <div class="pinRevealBox">
+      <p class="muted" id="pinStatus">PIN reveal on Feb 14 🎂💌</p>
+      <div id="pinReveal" class="pinReveal" hidden>
+        <span class="pinLabel">Today’s PIN:</span>
+        <span id="pinValue" class="pinValue">0000</span>
+      </div>
+      <p class="tiny muted" id="pinHint"></p>
+    </div>
+
+    <div class="lockBottom">
+      <div class="miniCountdown">
+        <span>⏳</span>
+        <span id="lockCountdownText">Loading…</span>
+      </div>
+      <p class="tiny muted">Made with 💗 just for you</p>
+    </div>
+  </div>
+</div>
+
   <div class="bg-hearts" aria-hidden="true"></div>
 
   <main class="container">
