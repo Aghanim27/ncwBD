@@ -1,24 +1,24 @@
 // ====== Personalize these ======
 const GIRL_NAME = "Nay Chi";
 const FROM_NAME = "Kaung";
-// Secret code: set it to something she will guess (e.g. her nickname)
+// Secret code: set it to something she will guess
 const SECRET_CODE = "Ar Bwrr";
 
-// Reasons list (edit these to match her)
+// Reasons list
 const REASONS = [
   "you make me feel calm even when life is messy.",
   "you’re cute without even trying.",
-  "you make ordinary moments feel special.",
   "you’re strong in a way that inspires me.",
   "your laugh is genuinely my favorite sound.",
+  "that corner of your lip, hmm...",
   "you’re you… and that’s more than enough."
 ];
 
 // Typewriter lines (edit if you want)
 const TYPE_LINES = [
-  "I made this little website because you deserve something thoughtful.",
+  "I made this little thing because you deserve something thoughtful.",
   "Today is special — it’s Valentine’s Day, and it’s your birthday too.",
-  "So… here’s a reminder: you are loved. A lot. 💗"
+  "So… here’s a reminder: I love you. A lot. 💗"
 ];
 
 // ====== Helpers ======
@@ -139,7 +139,7 @@ const playBtn = $("playBtn");
 
 playBtn.addEventListener("click", async () => {
   if (!music.src) {
-    alert("No music.mp3 found. (Optional) Put a music.mp3 file in the same folder 😊");
+    alert("No music.mp3 found.");
     return;
   }
 
@@ -157,7 +157,7 @@ playBtn.addEventListener("click", async () => {
 });
 
 // ====== FULL SITE LOCK (PIN REVEALS ON FEB 14) ======
-const LOCK_PIN = "4321"; // <- change to your 4-digit PIN
+const LOCK_PIN = "4321"; // <- change to 4-digit PIN
 const lockOverlay = document.getElementById("lockOverlay");
 const pinInput = document.getElementById("pinInput");
 const unlockSiteBtn = document.getElementById("unlockSiteBtn");
