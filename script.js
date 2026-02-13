@@ -226,13 +226,13 @@ function tryUnlock() {
 
   // Optional rule: only allow unlock on/after Feb 14.
   // If you want her to be able to unlock anytime IF she guesses the PIN, delete this block.
-  const now = new Date();
-  const feb14 = getFeb14Midnight();
-  if (now < feb14) {
-    alert("Not yet 😭 Come back on Feb 14 💗");
-    pinInput.value = "";
-    return;
-  }
+  // const now = new Date();
+  // const feb14 = getFeb14Midnight();
+  // if (now < feb14) {
+  //   alert("Not yet 😭 Come back on Feb 14 💗");
+  //   pinInput.value = "";
+  //   return;
+  // }
 
   if (value === LOCK_PIN) {
     unlockSite();
